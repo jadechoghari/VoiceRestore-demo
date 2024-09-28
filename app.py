@@ -4,7 +4,8 @@ import torchaudio
 from transformers import AutoModel
 import spaces
 
-checkpoint_path = "/content/VoiceRestore"
+
+checkpoint_path = "./"
 model = AutoModel.from_pretrained(checkpoint_path, trust_remote_code=True)
 
 
@@ -21,8 +22,8 @@ with gr.Blocks() as demo:
     gr.Markdown(
         """
         <p style='text-align: center;'>Upload a degraded audio file or select an example, and the space will restore it using the <b>VoiceRestore</b> model!<br>
-        Based on this <a href='https://github.com/skirdey/voicerestore' target='_blank'>repo</a> by @StanKirdey,<br>
-        and the HF Transformers model by <a href='https://github.com/jadechoghari' target='_blank'>@jadechoghari</a>.
+        Based on this <a href='https://github.com/skirdey/voicerestore' target='_blank'>repo</a> by <a href='https://github.com/skirdey' target='_blank'>@Stan Kirdey</a>,<br>
+        and the HF Transformers 🤗 model by <a href='https://github.com/jadechoghari' target='_blank'>@jadechoghari</a>.
         </p>
         """
     )
@@ -32,10 +33,11 @@ with gr.Blocks() as demo:
             gr.Markdown("### 🎧 Select an Example or Upload Your Audio:")
             input_audio = gr.Audio(label="Upload Degraded Audio", type="filepath")
             gr.Examples(
-                examples=["example1.wav", "example2.wav", "example3.wav"],
+                examples=["example_input.wav", "example_16khz.wav", "example-distort-16khz.wav", "example-full-degrad.wav", "example-reverb-16khz.wav"],
                 inputs=input_audio,
                 label="Sample Degraded Audios"
-            )
+            ),
+            cache_examples="lazy"
         
         with gr.Column():
             gr.Markdown("### 🎶 Restored Audio Output:")

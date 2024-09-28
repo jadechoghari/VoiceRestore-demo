@@ -17,5 +17,5 @@ soundfile==0.12.1
 einops
 ninja
 tqdm
+transformers
 spaces
-gradio --pre

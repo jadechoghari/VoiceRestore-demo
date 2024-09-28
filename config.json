@@ -1,0 +1,18 @@
+{
+  "architectures": [
+    "VoiceRestore"
+  ],
+  "model_type": "voice_restore",
+  "model_name_or_path": "content/voicerestore",
+  "steps": 16,
+  "cfg_strength": 0.5,
+  "window_size_sec": 5.0,
+  "overlap": 0.5,
+  "torch_dtype": "float32",
+  "transformers_version": "4.42.4",
+  "auto_map": {
+    "AutoConfig": "modeling.VoiceRestoreConfig",
+    "AutoModel": "modeling.VoiceRestore"
+  },
+  "preprocessor_class": null
+}
