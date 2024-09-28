@@ -1,7 +1,12 @@
 ---
-license: mit
-pipeline_tag: audio-to-audio
-library_name: transformers
+title: VoiceRestore
+emoji: 🔊
+colorFrom: yellow
+colorTo: green
+sdk: gradio
+sdk_version: 5.0.0b3
+app_file: app.py
+pinned: false
 ---
 # VoiceRestore: Flow-Matching Transformers for Speech Recording Quality Restoration
 
