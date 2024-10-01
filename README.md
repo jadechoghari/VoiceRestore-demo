@@ -14,6 +14,15 @@ VoiceRestore is a cutting-edge speech restoration model designed to significantl
 
 It is based on this [repo](https://github.com/skirdey/voicerestore) & demo of audio restorations: [VoiceRestore](https://sparkling-rabanadas-3082be.netlify.app/)
 
+## Build - using Gradio 🟠
+``` bash
+!git lfs install
+!git clone https://github.com/jadechoghari/VoiceRestore-demo
+%cd VoiceRestore
+!pip install -r requirements.txt
+!python app.py
+```
+
 ## Usage - using Transformers 🤗
 ``` bash
 !git lfs install
